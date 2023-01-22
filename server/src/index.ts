@@ -5,6 +5,10 @@ import express from "express"
 import bodyParser from "body-parser"
 import api from "./api"
 import client from "./client"
+import { connect } from "./db"
+
+// connect to db
+connect()
 
 const app = express()
 const PORT = process.env.PORT!
