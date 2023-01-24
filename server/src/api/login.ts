@@ -34,6 +34,7 @@ ROUTER.post("/login", async (req, res) => {
         res.end()
     } catch (err) {
         console.error(`error: ${JSON.stringify(err)}`)
+        console.error(`error: ${err}`)
     }
 })
 

@@ -7,7 +7,7 @@ import api from "./api"
 import client from "./client"
 import { connect } from "./db"
 
-// connect to db
+// connect to database
 connect()
 
 const app = express()
