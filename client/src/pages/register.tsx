@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/register.scss";
@@ -8,6 +8,20 @@ const Register: React.FC<{}> = () => {
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    useEffect(() => {
+        const check_log_status = async () => {
+            let res: any = await fetch("/api/isloggedin")
+            res = await res.json()
+            res = JSON.parse(res)
+
+            if (res["login_status"]) {
+                window.location.href = "/home"
+            }
+        }
+
+        check_log_status()
+   })
 
     return (
         <div className="Register">

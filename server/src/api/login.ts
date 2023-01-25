@@ -30,8 +30,7 @@ ROUTER.post("/login", async (req, res) => {
 
         // response
         res.setHeader("Set-Cookie", token_cookie)
-        res.statusCode = 200
-        res.end()
+        res.redirect("/")
     } catch (err) {
         console.error(`error: ${JSON.stringify(err)}`)
         console.error(`error: ${err}`)
